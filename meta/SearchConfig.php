@@ -116,6 +116,7 @@ class SearchConfig extends Search
             array(
                 '$ID$',
                 '$NS$',
+                '$NSID$',
                 '$PAGE$',
                 '$USER$',
                 '$TODAY$'
@@ -123,6 +124,7 @@ class SearchConfig extends Search
             array(
                 $INFO['id'],
                 getNS($INFO['id']),
+                preg_replace('/:start$/', '', $INFO['id']),
                 noNS($INFO['id']),
                 isset($_SERVER['REMOTE_USER']) ? $_SERVER['REMOTE_USER'] : '',
                 date('Y-m-d')
